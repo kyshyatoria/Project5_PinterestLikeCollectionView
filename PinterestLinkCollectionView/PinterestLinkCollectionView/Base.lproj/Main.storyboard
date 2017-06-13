@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u9i-Tg-tq3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pinterest View Controller-->
+        <scene sceneID="if9-oM-hh2">
+            <objects>
+                <viewController storyboardIdentifier="FlickrPhotosViewController" automaticallyAdjustsScrollViewInsets="NO" id="u9i-Tg-tq3" customClass="PinterestViewController" customModule="PinterestLinkCollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QwK-kx-TDs"/>
+                        <viewControllerLayoutGuide type="bottom" id="jOG-eD-mcV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GHj-j9-rrK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ec2-Fd-4bG">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewLayout key="collectionViewLayout" id="h3F-MZ-6af" customClass="ImagesLayout" customModule="PinterestLinkCollectionView" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="5pH-fQ-VXM" customClass="ImageCollectionViewCell" customModule="PinterestLinkCollectionView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="146" height="137"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="146" height="137"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CiV-3i-TwZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="146" height="137"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="137" id="h30-mh-2b1"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="CiV-3i-TwZ" firstAttribute="leading" secondItem="5pH-fQ-VXM" secondAttribute="leading" id="4A6-7h-V68"/>
+                                            <constraint firstItem="CiV-3i-TwZ" firstAttribute="top" secondItem="5pH-fQ-VXM" secondAttribute="top" id="IHW-dd-seJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="CiV-3i-TwZ" secondAttribute="trailing" id="QbL-EE-mtR"/>
+                                            <constraint firstAttribute="bottom" secondItem="CiV-3i-TwZ" secondAttribute="bottom" id="SIe-Cz-9RN"/>
+                                        </constraints>
+                                        <size key="customSize" width="146" height="137"/>
+                                        <connections>
+                                            <outlet property="imageHeightConstraint" destination="h30-mh-2b1" id="qhi-qI-UYX"/>
+                                            <outlet property="imageView" destination="CiV-3i-TwZ" id="9J3-TY-6zS"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="u9i-Tg-tq3" id="UId-ac-wXD"/>
+                                    <outlet property="delegate" destination="u9i-Tg-tq3" id="FqH-B6-eif"/>
+                                    <outlet property="prefetchDataSource" destination="u9i-Tg-tq3" id="hOK-9F-ZAE"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ec2-Fd-4bG" firstAttribute="leading" secondItem="GHj-j9-rrK" secondAttribute="leading" id="7EM-sx-9Vh"/>
+                            <constraint firstItem="Ec2-Fd-4bG" firstAttribute="bottom" secondItem="jOG-eD-mcV" secondAttribute="top" id="Vq1-Kg-tRm"/>
+                            <constraint firstAttribute="trailing" secondItem="Ec2-Fd-4bG" secondAttribute="trailing" id="isp-yP-dKc"/>
+                            <constraint firstItem="Ec2-Fd-4bG" firstAttribute="top" secondItem="QwK-kx-TDs" secondAttribute="bottom" id="nFT-Wp-kJr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="RFa-py-CXe"/>
+                    <connections>
+                        <outlet property="imagesollectionView" destination="Ec2-Fd-4bG" id="sVg-7X-zss"/>
+                        <outlet property="searchDisplayController" destination="tay-wN-GQ7" id="nd1-1s-nVJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tvr-g3-3jb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="tay-wN-GQ7">
+                    <connections>
+                        <outlet property="delegate" destination="u9i-Tg-tq3" id="gks-vS-JFq"/>
+                        <outlet property="searchContentsController" destination="u9i-Tg-tq3" id="mpv-YB-5iw"/>
+                        <outlet property="searchResultsDataSource" destination="u9i-Tg-tq3" id="XNX-f0-cAA"/>
+                        <outlet property="searchResultsDelegate" destination="u9i-Tg-tq3" id="VnV-6l-4Rc"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="-399.19999999999999" y="58.920539730134934"/>
+        </scene>
+    </scenes>
+</document>
